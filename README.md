@@ -40,7 +40,10 @@ We can see that also (Total cases, Recovered cases, Active cases ) data is posit
 
 # Progress of Infection
 
-## ![prog](progress.png)
+- Visualizing China's, Italy's, Iran's, Spain's & USA's Confirmed Cases Progress
+  ![prog](https://raw.githubusercontent.com/sudofix/COVID19/master/China%2C_Iran%2C__Italy%2C_Spain_%26_USA_Progress.png)
+
+---
 
 ---
 
