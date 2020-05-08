@@ -20,6 +20,18 @@ Our ![data]( https://github.com/CSSEGISandData/COVID-19 ) is from Johns Hopkins 
 
 # Skewness of Data
 
+ ## 1- Calculating the skewness of Total Deaths for all the countries with **Rapidminer**
+
+by plotting the number of death cases on the x axis and number of countries have the same number of cases on the y axis.
+
+![Skewness](https://raw.githubusercontent.com/sudofix/COVID19/master/Skewness.png)
+We can see that the data is positively skewed, which means that the majority of the countries have few dead cases
+</br></br>
+## 2- Calculating Skewness of Total Confirmed, Recovered, Deaths & Active Cases Data using **Python**
+![skew](https://raw.githubusercontent.com/sudofix/COVID19/master/skew.png)
+
+We can see that also (Total cases, Recovered cases, Active cases ) data is positivley skewed
+
 ---
 
 ---
