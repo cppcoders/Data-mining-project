@@ -50,7 +50,7 @@ Tools : R lang
 
 ## 1- Exponential curve fit 
 Here is the confirmed cases growth curve in Egypt 
-![Egypt_growth](/images/25-5-2020/growth_curve.png)
+![Egypt_growth](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/growth_curve.png)
 
 We can see by just looking that the growth of number of cases in Egypt is an expoential grwoth. so we can try to find the closest exponential curve that fits into this curve and find what number will be on that curve on May 25.
 
@@ -77,18 +77,18 @@ Using exponential growth equation **alpha * exp(beta * t) + theta** and R model 
 ```
 The expected confirmed cases number on May 25 is about **21,000 case** 
 
-## ![fig1](/images/25-5-2020/exponintial_confirmed_cases.png)
+## ![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_confirmed_cases.png)
 
 By trying the same on (death - recovered ) cases ... 
 
 the expected deaths cases number on May 25 is about **1000 cases**
 
-## ![fig1](/images/25-5-2020/exponintial_deaths_cases.png)
+## ![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_deaths_cases.png)
 
 
 the expected recovered cases number on May 25 is about **4,500 cases**
 
-## ![fig1](/images/25-5-2020/exponintial_recovered_cases.png)
+## ![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_recovered_cases.png)
 
 </br>
 <hr>
@@ -113,14 +113,14 @@ We can run something like a simulation by adjusting the **E** and **P**.
 So by starting from the current dat and by saying that the average number of people someone infected is exposed to every day is 7 we find that the number of confirmed cases on May 25 is about **25,000 cases**
 and if it's 4 because of the quarntine the number is about **15,000*
 
-![fig](/images/25-5-2020/confirmed_infection_rate.png)
+![fig](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/confirmed_infection_rate.png)
 
 
 But by starting from the begining of the infection and by saying that the average number of people someone infected is exposed to each day is 7 before the quarntine and 2 after the quarntine.
 The number of Actual cases on May 25 is about **150,000 cases**
 
 
-![fig](/images/25-5-2020/confirmed_infection_rate_from_start.png)
+![fig](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/confirmed_infection_rate_from_start.png)
 
 ---
 
