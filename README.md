@@ -48,7 +48,7 @@ The day which we will predict the number of cases is May 25 2020.
 
 Tools : R lang 
 
-# Exponential curve fit 
+## 1- Exponential curve fit 
 Here is the confirmed cases growth curve in Egypt 
 ![Egypt_growth](/images/25-5-2020/growth_curve.png)
 
@@ -95,7 +95,7 @@ the expected recovered cases number on May 25 is about **4,500 cases**
 </br>
 
 
-## Logistic curve equation 
+## 2- Logistic curve equation 
 
 But there is no continuous exponential growth in real life, because eventualy we will reach a point where there will be so many infected people and less not infected people and the curve will start to slow until it falts when we reach the population,and here comes the logistic curve.
 
