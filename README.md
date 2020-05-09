@@ -62,7 +62,7 @@ Tried to predict the expected number of COVID-19 ( confirmed - deaths - recovere
 - Exponential curve equation</br>
 - Logistic curve equation
 
-The day which we will predict the number of cases is May 25 2020.
+The day which we will predict the number of cases on is May 25 2020.
 
 Tools : R lang
 
@@ -73,7 +73,7 @@ Here is the confirmed cases growth curve in Egypt
 
 We can see by just looking that the growth of number of cases in Egypt is an expoential grwoth. so we can try to find the closest exponential curve that fits into this curve and find what number will be on that curve on May 25.
 
-Using exponential growth equation **alpha _ exp(beta _ t) + theta** and R model to find the optimal alpha, beta and theta to find the closest curve fits into the growth curve of Egypt.
+Using exponential growth equation **alpha * exp(beta * t) + theta** and R model to find the optimal alpha, beta and theta to find the closest curve fits into the growth curve of Egypt.
 
 ```
 #Fitting a model to find the optimum value of theta
@@ -120,7 +120,7 @@ But there is no continuous exponential growth in real life, because eventualy we
 
 ![logistic_curve](https://images.ctfassets.net/vrkkgjbn4fsk/3Bs14iW8ZG2KAGYYIC0aCa/b3c9016568775b92a1d3f91ef23e3523/8-growth-s-curve.png?q=90&w=3066)
 
-Logistic curve equation is **N(d+1) = E _ P _ N(d)** where ...</br>
+Logistic curve equation is **N(d+1) = E * P * N(d)** where ...</br>
 
 - **N(d+1)** : Number of cases in the next day </br>
 - **E** : Average number of people someone infectedd is exposed to every day</br>
