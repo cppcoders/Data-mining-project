@@ -1,18 +1,25 @@
 # Data
 
 Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins university, and it's daily updated
+Some modifications we did on the data are :
+- removing province/state columns
+- grouping states by countries and sum thier values
+- extract last day data from each data set to create summary dataset
+- using datasets to create new datasets for new daily cases
 
 ---
 
 ---
 
 # Correlation of Data
+- using different correlation methods we calculated the following correlations between data
 
 ## ![Corr](correlation.png)
 
 ---
 
 # Similarity and Dissimilarity of Data
+- using different distance methods we calculated the following distances between the data
 
 ## ![dis](distance.png)
 
@@ -48,6 +55,7 @@ We can see that also (Total cases, Recovered cases, Active cases ) data is posit
 ---
 
 # Data Boxplots
+- drawing boxplots for confirmed, death, recoverd and active cases gave the follwing charts
 
 ## ![box](Boxplots.png)
 
