@@ -1,7 +1,7 @@
 # Data
 
 Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins university, and it's daily updated
-Some modifications we did on the data are :
+### Some modifications we made on the data are :
 - removing province/state columns
 - grouping states by countries and sum thier values
 - extract last day data from each data set to create summary dataset
