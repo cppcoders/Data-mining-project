@@ -161,17 +161,19 @@ The number of Actual cases on May 25 is about **150,000 cases**
 
 ![act](act.png)
 
-- Max Confirmed Cases in a Day Each Country Generation
+- Max Confirmed Cases in a Day for Each Country Generation
 
 ![mcc](mcc.png)
 
-- Max Deaths Cases in a Day Each Country Generation
+- Max Deaths Cases in a Day for Each Country Generation
 
 ![mdc](mdc.png)
 
-- Max Recovered Cases in a Day Each Country Generation
+- Max Recovered Cases in a Day for Each Country Generation
 
 ![mrc](mrc.png)
+
+minimum will be zero for all so no need to generate it
 
 ---
 
@@ -217,6 +219,8 @@ As we know bluetooth has a maximum range of 10 feet so we can use this as an adv
 ---
 
 # Naive Bayes Classification
+
+## using active cases discretized data we applid naive bayes classification and this is the results
 
 - Description
 
