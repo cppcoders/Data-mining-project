@@ -197,3 +197,71 @@ We discretize the Active Cases for the countries as follows :
 ---
 
 # K-Means Clustering
+1 - K-Means using RapidMiner 
+-  Clustering the countries based on ( Total Cases - Total Deaths - Total Recovered - Active Cases ) for each country 
+-  Number of cluster is 3  
+
+The means for each cluster
+![fig](https://github.com/cppcoders/Data-mining-project/blob/master/cluster3.png)
+
+Number of countries in each cluster 
+![fig](https://github.com/cppcoders/Data-mining-project/blob/master/cluster1.png)
+
+Number of countries rows which belongs to cluster 0 
+![fig](https://github.com/cppcoders/Data-mining-project/blob/master/cluster2.png)
+
+Plotting the clusters
+
+![fig](https://github.com/cppcoders/Data-mining-project/blob/master/k-means-RM.jpeg)
+
+</br>
+</br> 
+
+2- Using R language 
+-  Clustering the countries based on ( Total Cases - Total Deaths - Total Recovered - Active Cases ) for each country 
+-  Number of cluster is 3  
+```
+#scaling the data
+df = scale(data[,2:ncol(data)])
+
+rownames(df) = data$Country
+
+#Setting the number of clusters to 3 
+km.res = kmeans(df ,centers = 3 , nstart = 15)
+
+#aggregate the data by the cluster number
+aggregate(data, by=list(cluster=km.res$cluster), mean)
+dd = cbind(data , cluster = km.res$cluster)
+
+#print number of countries in each cluster 
+print(table(unlist(dd$cluster)))
+
+#visualize the clusters
+fviz_cluster(km.res ,df)
+
+```
+| cluster | number of countries |
+| ------- | ------------------- |
+| 1 | 176 |
+| 2 | 1   |
+| 3 | 10  |
+
+![fig](https://github.com/cppcoders/Data-mining-project/blob/master/k-means-US.png)
+
+But we can clearly see that US is affecting the clustering because it's very high numbers so it's taking a cluster for itself 
+
+So we can try to remove it from the data and recluster the countries 
+```
+data = data %>% filter(Country != "US")
+
+```
+| cluster | number of countries |
+| ------- | ------------------- |
+| 1 | 176 |
+| 2 | 6   |
+| 3 | 4 | 
+
+![fig](https://github.com/cppcoders/Data-mining-project/blob/master/k-means.png)
+
+
+
