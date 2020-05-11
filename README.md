@@ -17,7 +17,7 @@ Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins uni
 
 - using different correlation methods we calculated the following correlations between data
 
-## ![Corr](correlation.png)
+![Corr](images/correlation.png)
 
 ---
 
@@ -25,7 +25,7 @@ Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins uni
 
 - using different distance methods we calculated the following distances between the data
 
-## ![dis](distance.png)
+![dis](images/distance.png)
 
 ---
 
@@ -62,7 +62,7 @@ We can see that also (Total cases, Recovered cases, Active cases ) data is posit
 
 - drawing boxplots for confirmed, death, recoverd and active cases gave the follwing charts
 
-## ![box](Boxplots.png)
+![box](images/Boxplots.png)
 
 ---
 
@@ -111,17 +111,17 @@ Using exponential growth equation **alpha _ exp(beta _ t) + theta** and R model 
 
 The expected confirmed cases number on May 25 is about **21,000 case**
 
-## ![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_confirmed_cases.png)
+![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_confirmed_cases.png)
 
 By trying the same on (death - recovered ) cases ...
 
 the expected deaths cases number on May 25 is about **1000 cases**
 
-## ![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_deaths_cases.png)
+![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_deaths_cases.png)
 
 the expected recovered cases number on May 25 is about **4,500 cases**
 
-## ![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_recovered_cases.png)
+![fig1](https://raw.githubusercontent.com/Dodger23/EGYPT-19/master/images/25-5-2020/exponintial_recovered_cases.png)
 
 </br>
 <hr>
@@ -159,19 +159,19 @@ The number of Actual cases on May 25 is about **150,000 cases**
 
 - Active Cases Generation
 
-![act](act.png)
+![act](images/act.png)
 
 - Max Confirmed Cases in a Day for Each Country Generation
 
-![mcc](mcc.png)
+![mcc](images/mcc.png)
 
 - Max Deaths Cases in a Day for Each Country Generation
 
-![mdc](mdc.png)
+![mdc](images/mdc.png)
 
 - Max Recovered Cases in a Day for Each Country Generation
 
-![mrc](mrc.png)
+![mrc](images/mrc.png)
 
 minimum will be zero for all so no need to generate it
 
@@ -224,15 +224,15 @@ As we know bluetooth has a maximum range of 10 feet so we can use this as an adv
 
 - Description
 
-![sd](sdbayes.png)
+![sd](images/sdbayes.png)
 
 - Simple Charts
 
-![c](cbayes.png)
+![c](images/cbayes.png)
 
 - Distribution Table
 
-![d](dbayes.png)
+![d](images/dbayes.png)
 
 ---
 
