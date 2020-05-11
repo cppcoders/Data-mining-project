@@ -208,6 +208,11 @@ We discretize the Active Cases for the countries as follows :
 
 As we know bluetooth has a maximum range of 10 feet so we can use this as an advantage, we can make every mobile phone keep it's bluetooth on scanning for devices always and logging how long any discovered device is available in the given range, using the data from these logs and by sending it daily to data analysis servers. when someone is tested positive for coronavirus we can know who he has been with in the last 14 days and for how long so we can predict infected people and quarantine them
 
+
+## Second one based on SIM location
+By representing the persons as nodes and tarck there paths using phones SIM cards location data, whenever there is an infected person we can track his/her path for the last 14 days (starting of infection) and give every person (other node) he/she interacted with a propability of being infected based on the time and most importantly the space between them while interacting.
+After that we consider people with high propabilities infected and track there paths too to find suspicious people that may contain the virous.
+
 ---
 
 ---
