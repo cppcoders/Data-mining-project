@@ -160,11 +160,12 @@ The number of Actual cases on May 25 is about **150,000 cases**
 
 The data has no missing values, instead it's replaced with zeroes so we don't to worry about that.</br>
 We discretize the Active Cases for the countries as follows : 
-| cases | state |
+| Upper limit | class name |
 | ----- | ----- |
-| 0 -2000 | low |
-| 2000 - 9000 | medium |
-| 9000 - maximum number of Active cases | high 
+| 0 | none |
+| 2000 | low |
+| 9000 | medium |
+| 1,020,000 (maximum number of Active cases) | high 
 
 ![fig](https://github.com/cppcoders/Data-mining-project/blob/master/Discretizetion.png)
 
