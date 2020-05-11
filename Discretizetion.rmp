@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.6.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.6.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve All" width="90" x="45" y="493">
+        <parameter key="repository_entry" value="//Local Repository/data/All"/>
+      </operator>
+      <operator activated="true" class="discretize_by_user_specification" compatibility="9.6.000" expanded="true" height="103" name="Discretize Active" width="90" x="380" y="493">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Active Cases"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="numeric"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="real"/>
+        <parameter key="block_type" value="value_series"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_series_end"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <list key="classes">
+          <parameter key="None" value="0.0"/>
+          <parameter key="Low" value="1000.0"/>
+          <parameter key="Medium" value="20000.0"/>
+          <parameter key="High" value="2000000.0"/>
+        </list>
+      </operator>
+      <operator activated="true" class="discretize_by_user_specification" compatibility="9.6.000" expanded="true" height="103" name="Discretize Total" width="90" x="380" y="646">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Total Cases"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="numeric"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="real"/>
+        <parameter key="block_type" value="value_series"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_series_end"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <list key="classes">
+          <parameter key="None" value="0.0"/>
+          <parameter key="Low" value="1000.0"/>
+          <parameter key="Medium" value="20000.0"/>
+          <parameter key="High" value="2000000.0"/>
+        </list>
+      </operator>
+      <operator activated="true" class="discretize_by_user_specification" compatibility="9.6.000" expanded="true" height="103" name="Discretize Death" width="90" x="380" y="799">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Total Deaths"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="numeric"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="real"/>
+        <parameter key="block_type" value="value_series"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_series_end"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <list key="classes">
+          <parameter key="None" value="0.0"/>
+          <parameter key="Low" value="100.0"/>
+          <parameter key="Medium" value="1000.0"/>
+          <parameter key="High" value="2000000.0"/>
+        </list>
+      </operator>
+      <operator activated="true" class="discretize_by_user_specification" compatibility="9.6.000" expanded="true" height="103" name="Discretize Recovered" width="90" x="380" y="952">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Total Recovered"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="numeric"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="real"/>
+        <parameter key="block_type" value="value_series"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_series_end"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <list key="classes">
+          <parameter key="None" value="0.0"/>
+          <parameter key="Low" value="1000.0"/>
+          <parameter key="Medium" value="10000.0"/>
+          <parameter key="High" value="2000000.0"/>
+        </list>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve AllMinusActive" width="90" x="45" y="1105">
+        <parameter key="repository_entry" value="//Local Repository/data/AllMinusActive"/>
+      </operator>
+      <operator activated="true" class="generate_attributes" compatibility="9.6.000" expanded="true" height="82" name="Generate Active" width="90" x="380" y="1105">
+        <list key="function_descriptions">
+          <parameter key="Active Cases" value="[Total Cases]-([Total Deaths]+[Total Recovered])"/>
+          <parameter key="R/D" value="if([Total Recovered]&gt;[Total Deaths],[Total Recovered]-[Total Deaths]+&quot;R+&quot;,if([Total Recovered]&lt;[Total Deaths],[Total Deaths]-[Total Recovered]+&quot;D+&quot;,&quot;equal&quot;))"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve confirmed2" width="90" x="45" y="1207">
+        <parameter key="repository_entry" value="//Local Repository/data/confirmed2"/>
+      </operator>
+      <operator activated="true" class="generate_attributes" compatibility="9.6.000" expanded="true" height="82" name="Generate Max Confirmed" width="90" x="380" y="1207">
+        <list key="function_descriptions">
+          <parameter key="Max Confirmed Cases" value="max([1/22/20],[1/23/20],[1/24/20],[1/25/20],[1/26/20],[1/27/20],[1/28/20],[1/29/20],[1/30/20],[1/31/20],[2/1/20],[2/10/20],[2/11/20],[2/12/20],[2/13/20],[2/14/20],[2/15/20],[2/16/20],[2/17/20],[2/18/20],[2/19/20],[2/2/20],[2/20/20],[2/21/20],[2/22/20],[2/23/20],[2/24/20],[2/25/20],[2/26/20],[2/27/20],[2/28/20],[2/29/20],[2/3/20],[2/4/20],[2/5/20],[2/6/20],[2/7/20],[2/8/20],[2/9/20],[3/1/20],[3/10/20],[3/11/20],[3/12/20],[3/13/20],[3/14/20],[3/15/20],[3/15/20],[3/16/20],[3/17/20],[3/18/20],[3/19/20],[3/2/20],[3/20/20],[3/21/20],[3/22/20],[3/23/20],[3/24/20],[3/25/20],[3/26/20],[3/27/20],[3/28/20],[3/29/20],[3/3/20],[3/30/20],[3/31/20],[3/4/20],[3/5/20],[3/6/20],[3/7/20],[3/8/20],[3/9/20],[4/1/20],[4/10/20],[4/11/20],[4/12/20],[4/13/20],[4/14/20],[4/15/20],[4/16/20],[4/17/20],[4/18/20],[4/19/20],[4/2/20],[4/20/20],[4/21/20],[4/22/20],[4/23/20],[4/24/20],[4/25/20],[4/26/20],[4/27/20],[4/28/20],[4/29/20],[4/3/20],[4/30/20],[4/4/20],[4/5/20],[4/6/20],[4/7/20],[4/8/20],[4/9/20],[5/1/20],[5/2/20],[5/3/20],[5/4/20],[5/5/20],[5/6/20],[5/7/20],[5/8/20],[5/9/20])"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve death2" width="90" x="45" y="1309">
+        <parameter key="repository_entry" value="//Local Repository/data/death2"/>
+      </operator>
+      <operator activated="true" class="generate_attributes" compatibility="9.6.000" expanded="true" height="82" name="Generate Max Death" width="90" x="380" y="1309">
+        <list key="function_descriptions">
+          <parameter key="Max Deaths Cases" value="max([1/22/20],[1/23/20],[1/24/20],[1/25/20],[1/26/20],[1/27/20],[1/28/20],[1/29/20],[1/30/20],[1/31/20],[2/1/20],[2/10/20],[2/11/20],[2/12/20],[2/13/20],[2/14/20],[2/15/20],[2/16/20],[2/17/20],[2/18/20],[2/19/20],[2/2/20],[2/20/20],[2/21/20],[2/22/20],[2/23/20],[2/24/20],[2/25/20],[2/26/20],[2/27/20],[2/28/20],[2/29/20],[2/3/20],[2/4/20],[2/5/20],[2/6/20],[2/7/20],[2/8/20],[2/9/20],[3/1/20],[3/10/20],[3/11/20],[3/12/20],[3/13/20],[3/14/20],[3/15/20],[3/15/20],[3/16/20],[3/17/20],[3/18/20],[3/19/20],[3/2/20],[3/20/20],[3/21/20],[3/22/20],[3/23/20],[3/24/20],[3/25/20],[3/26/20],[3/27/20],[3/28/20],[3/29/20],[3/3/20],[3/30/20],[3/31/20],[3/4/20],[3/5/20],[3/6/20],[3/7/20],[3/8/20],[3/9/20],[4/1/20],[4/10/20],[4/11/20],[4/12/20],[4/13/20],[4/14/20],[4/15/20],[4/16/20],[4/17/20],[4/18/20],[4/19/20],[4/2/20],[4/20/20],[4/21/20],[4/22/20],[4/23/20],[4/24/20],[4/25/20],[4/26/20],[4/27/20],[4/28/20],[4/29/20],[4/3/20],[4/30/20],[4/4/20],[4/5/20],[4/6/20],[4/7/20],[4/8/20],[4/9/20],[5/1/20],[5/2/20],[5/3/20],[5/4/20],[5/5/20],[5/6/20],[5/7/20],[5/8/20],[5/9/20])"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve recovered2" width="90" x="45" y="1404">
+        <parameter key="repository_entry" value="//Local Repository/data/recovered2"/>
+      </operator>
+      <operator activated="true" class="generate_attributes" compatibility="9.6.000" expanded="true" height="82" name="Generate Max Recovered" width="90" x="380" y="1411">
+        <list key="function_descriptions">
+          <parameter key="Max Recovered Cases" value="max([1/22/20],[1/23/20],[1/24/20],[1/25/20],[1/26/20],[1/27/20],[1/28/20],[1/29/20],[1/30/20],[1/31/20],[2/1/20],[2/10/20],[2/11/20],[2/12/20],[2/13/20],[2/14/20],[2/15/20],[2/16/20],[2/17/20],[2/18/20],[2/19/20],[2/2/20],[2/20/20],[2/21/20],[2/22/20],[2/23/20],[2/24/20],[2/25/20],[2/26/20],[2/27/20],[2/28/20],[2/29/20],[2/3/20],[2/4/20],[2/5/20],[2/6/20],[2/7/20],[2/8/20],[2/9/20],[3/1/20],[3/10/20],[3/11/20],[3/12/20],[3/13/20],[3/14/20],[3/15/20],[3/15/20],[3/16/20],[3/17/20],[3/18/20],[3/19/20],[3/2/20],[3/20/20],[3/21/20],[3/22/20],[3/23/20],[3/24/20],[3/25/20],[3/26/20],[3/27/20],[3/28/20],[3/29/20],[3/3/20],[3/30/20],[3/31/20],[3/4/20],[3/5/20],[3/6/20],[3/7/20],[3/8/20],[3/9/20],[4/1/20],[4/10/20],[4/11/20],[4/12/20],[4/13/20],[4/14/20],[4/15/20],[4/16/20],[4/17/20],[4/18/20],[4/19/20],[4/2/20],[4/20/20],[4/21/20],[4/22/20],[4/23/20],[4/24/20],[4/25/20],[4/26/20],[4/27/20],[4/28/20],[4/29/20],[4/3/20],[4/30/20],[4/4/20],[4/5/20],[4/6/20],[4/7/20],[4/8/20],[4/9/20],[5/1/20],[5/2/20],[5/3/20],[5/4/20],[5/5/20],[5/6/20],[5/7/20],[5/8/20],[5/9/20])"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve All (2)" width="90" x="45" y="1564">
+        <parameter key="repository_entry" value="//Local Repository/data/All"/>
+      </operator>
+      <operator activated="true" class="select_attributes" compatibility="9.6.000" expanded="true" height="82" name="Select Attributes" width="90" x="313" y="1564">
+        <parameter key="attribute_filter_type" value="subset"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value="Active Cases|Total Cases|Total Deaths|Total Recovered"/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+      </operator>
+      <operator activated="true" class="concurrency:k_means" compatibility="9.6.000" expanded="true" height="82" name="Clustering" width="90" x="514" y="1564">
+        <parameter key="add_cluster_attribute" value="true"/>
+        <parameter key="add_as_label" value="false"/>
+        <parameter key="remove_unlabeled" value="false"/>
+        <parameter key="k" value="3"/>
+        <parameter key="max_runs" value="10"/>
+        <parameter key="determine_good_start_values" value="true"/>
+        <parameter key="measure_types" value="BregmanDivergences"/>
+        <parameter key="mixed_measure" value="MixedEuclideanDistance"/>
+        <parameter key="nominal_measure" value="NominalDistance"/>
+        <parameter key="numerical_measure" value="EuclideanDistance"/>
+        <parameter key="divergence" value="SquaredEuclideanDistance"/>
+        <parameter key="kernel_type" value="radial"/>
+        <parameter key="kernel_gamma" value="1.0"/>
+        <parameter key="kernel_sigma1" value="1.0"/>
+        <parameter key="kernel_sigma2" value="0.0"/>
+        <parameter key="kernel_sigma3" value="2.0"/>
+        <parameter key="kernel_degree" value="3.0"/>
+        <parameter key="kernel_shift" value="1.0"/>
+        <parameter key="kernel_a" value="1.0"/>
+        <parameter key="kernel_b" value="0.0"/>
+        <parameter key="max_optimization_steps" value="100"/>
+        <parameter key="use_local_random_seed" value="false"/>
+        <parameter key="local_random_seed" value="1992"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve dactive" width="90" x="45" y="34">
+        <parameter key="repository_entry" value="//Local Repository/data/dactive"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role" width="90" x="179" y="34">
+        <parameter key="attribute_name" value="Active Cases"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="naive_bayes" compatibility="9.6.000" expanded="true" height="82" name="Naive Active" width="90" x="380" y="34">
+        <parameter key="laplace_correction" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve dtotal" width="90" x="45" y="136">
+        <parameter key="repository_entry" value="//Local Repository/data/dtotal"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role (3)" width="90" x="179" y="136">
+        <parameter key="attribute_name" value="Total Cases"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="naive_bayes" compatibility="9.6.000" expanded="true" height="82" name="Naive Total" width="90" x="380" y="136">
+        <parameter key="laplace_correction" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve ddeath" width="90" x="45" y="238">
+        <parameter key="repository_entry" value="//Local Repository/data/ddeath"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role (4)" width="90" x="179" y="238">
+        <parameter key="attribute_name" value="Total Deaths"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="naive_bayes" compatibility="9.6.000" expanded="true" height="82" name="NAive Death" width="90" x="380" y="238">
+        <parameter key="laplace_correction" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve drec" width="90" x="45" y="340">
+        <parameter key="repository_entry" value="//Local Repository/data/drec"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role (5)" width="90" x="179" y="340">
+        <parameter key="attribute_name" value="Total Recovered"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="naive_bayes" compatibility="9.6.000" expanded="true" height="82" name="Naive Recovered" width="90" x="380" y="340">
+        <parameter key="laplace_correction" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve dactive (2)" width="90" x="45" y="1717">
+        <parameter key="repository_entry" value="//Local Repository/data/dactive"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role (2)" width="90" x="313" y="1717">
+        <parameter key="attribute_name" value="Active Cases"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="concurrency:parallel_decision_tree" compatibility="9.6.000" expanded="true" height="103" name="Active Tree" width="90" x="514" y="1717">
+        <parameter key="criterion" value="gain_ratio"/>
+        <parameter key="maximal_depth" value="20"/>
+        <parameter key="apply_pruning" value="true"/>
+        <parameter key="confidence" value="0.1"/>
+        <parameter key="apply_prepruning" value="true"/>
+        <parameter key="minimal_gain" value="0.01"/>
+        <parameter key="minimal_leaf_size" value="2"/>
+        <parameter key="minimal_size_for_split" value="4"/>
+        <parameter key="number_of_prepruning_alternatives" value="3"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve ddeath (2)" width="90" x="45" y="1870">
+        <parameter key="repository_entry" value="//Local Repository/data/ddeath"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role (6)" width="90" x="313" y="1870">
+        <parameter key="attribute_name" value="Total Deaths"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="concurrency:parallel_decision_tree" compatibility="9.6.000" expanded="true" height="103" name="Death tree" width="90" x="514" y="1870">
+        <parameter key="criterion" value="gain_ratio"/>
+        <parameter key="maximal_depth" value="20"/>
+        <parameter key="apply_pruning" value="true"/>
+        <parameter key="confidence" value="0.1"/>
+        <parameter key="apply_prepruning" value="true"/>
+        <parameter key="minimal_gain" value="0.01"/>
+        <parameter key="minimal_leaf_size" value="2"/>
+        <parameter key="minimal_size_for_split" value="4"/>
+        <parameter key="number_of_prepruning_alternatives" value="3"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve drec (2)" width="90" x="45" y="2023">
+        <parameter key="repository_entry" value="//Local Repository/data/drec"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role (7)" width="90" x="313" y="2023">
+        <parameter key="attribute_name" value="Total Recovered"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="concurrency:parallel_decision_tree" compatibility="9.6.000" expanded="true" height="103" name="Recovered Tree" width="90" x="514" y="2023">
+        <parameter key="criterion" value="gain_ratio"/>
+        <parameter key="maximal_depth" value="20"/>
+        <parameter key="apply_pruning" value="true"/>
+        <parameter key="confidence" value="0.1"/>
+        <parameter key="apply_prepruning" value="true"/>
+        <parameter key="minimal_gain" value="0.01"/>
+        <parameter key="minimal_leaf_size" value="2"/>
+        <parameter key="minimal_size_for_split" value="4"/>
+        <parameter key="number_of_prepruning_alternatives" value="3"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve dtotal (2)" width="90" x="45" y="2125">
+        <parameter key="repository_entry" value="//Local Repository/data/dtotal"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.6.000" expanded="true" height="82" name="Set Role (8)" width="90" x="313" y="2125">
+        <parameter key="attribute_name" value="Total Cases"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles">
+          <parameter key="Country" value="id"/>
+        </list>
+      </operator>
+      <operator activated="true" class="concurrency:parallel_decision_tree" compatibility="9.6.000" expanded="true" height="103" name="Total Tree" width="90" x="514" y="2176">
+        <parameter key="criterion" value="gain_ratio"/>
+        <parameter key="maximal_depth" value="20"/>
+        <parameter key="apply_pruning" value="true"/>
+        <parameter key="confidence" value="0.1"/>
+        <parameter key="apply_prepruning" value="true"/>
+        <parameter key="minimal_gain" value="0.01"/>
+        <parameter key="minimal_leaf_size" value="2"/>
+        <parameter key="minimal_size_for_split" value="4"/>
+        <parameter key="number_of_prepruning_alternatives" value="3"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve dactive (3)" width="90" x="45" y="2329">
+        <parameter key="repository_entry" value="//Local Repository/data/dactive"/>
+      </operator>
+      <operator activated="true" class="nominal_to_numerical" compatibility="9.6.000" expanded="true" height="103" name="Numerical from Active" width="90" x="246" y="2329">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Active Cases"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="nominal"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="file_path"/>
+        <parameter key="block_type" value="single_value"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="single_value"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="coding_type" value="unique integers"/>
+        <parameter key="use_comparison_groups" value="false"/>
+        <list key="comparison_groups"/>
+        <parameter key="unexpected_value_handling" value="all 0 and warning"/>
+        <parameter key="use_underscore_in_name" value="false"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve ddeath (3)" width="90" x="45" y="2431">
+        <parameter key="repository_entry" value="//Local Repository/data/ddeath"/>
+      </operator>
+      <operator activated="true" class="nominal_to_numerical" compatibility="9.6.000" expanded="true" height="103" name="Numerical from Death" width="90" x="246" y="2431">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Total Deaths"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="nominal"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="file_path"/>
+        <parameter key="block_type" value="single_value"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="single_value"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="coding_type" value="unique integers"/>
+        <parameter key="use_comparison_groups" value="false"/>
+        <list key="comparison_groups"/>
+        <parameter key="unexpected_value_handling" value="all 0 and warning"/>
+        <parameter key="use_underscore_in_name" value="false"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve drec (3)" width="90" x="45" y="2533">
+        <parameter key="repository_entry" value="//Local Repository/data/drec"/>
+      </operator>
+      <operator activated="true" class="nominal_to_numerical" compatibility="9.6.000" expanded="true" height="103" name="Numerical from Recovered" width="90" x="246" y="2533">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Total Recovered"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="nominal"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="file_path"/>
+        <parameter key="block_type" value="single_value"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="single_value"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="coding_type" value="dummy coding"/>
+        <parameter key="use_comparison_groups" value="false"/>
+        <list key="comparison_groups"/>
+        <parameter key="unexpected_value_handling" value="all 0 and warning"/>
+        <parameter key="use_underscore_in_name" value="false"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve dtotal (3)" width="90" x="45" y="2635">
+        <parameter key="repository_entry" value="//Local Repository/data/dtotal"/>
+      </operator>
+      <operator activated="true" class="nominal_to_numerical" compatibility="9.6.000" expanded="true" height="103" name="Numerical from Total" width="90" x="246" y="2635">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Total Cases"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="nominal"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="file_path"/>
+        <parameter key="block_type" value="single_value"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="single_value"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="coding_type" value="dummy coding"/>
+        <parameter key="use_comparison_groups" value="false"/>
+        <list key="comparison_groups"/>
+        <parameter key="unexpected_value_handling" value="all 0 and warning"/>
+        <parameter key="use_underscore_in_name" value="false"/>
+      </operator>
+      <connect from_op="Retrieve All" from_port="output" to_op="Discretize Active" to_port="example set input"/>
+      <connect from_op="Discretize Active" from_port="example set output" to_port="result 5"/>
+      <connect from_op="Discretize Active" from_port="original" to_op="Discretize Total" to_port="example set input"/>
+      <connect from_op="Discretize Total" from_port="example set output" to_port="result 6"/>
+      <connect from_op="Discretize Total" from_port="original" to_op="Discretize Death" to_port="example set input"/>
+      <connect from_op="Discretize Death" from_port="example set output" to_port="result 7"/>
+      <connect from_op="Discretize Death" from_port="original" to_op="Discretize Recovered" to_port="example set input"/>
+      <connect from_op="Discretize Recovered" from_port="example set output" to_port="result 8"/>
+      <connect from_op="Retrieve AllMinusActive" from_port="output" to_op="Generate Active" to_port="example set input"/>
+      <connect from_op="Generate Active" from_port="example set output" to_port="result 9"/>
+      <connect from_op="Retrieve confirmed2" from_port="output" to_op="Generate Max Confirmed" to_port="example set input"/>
+      <connect from_op="Generate Max Confirmed" from_port="example set output" to_port="result 10"/>
+      <connect from_op="Retrieve death2" from_port="output" to_op="Generate Max Death" to_port="example set input"/>
+      <connect from_op="Generate Max Death" from_port="example set output" to_port="result 11"/>
+      <connect from_op="Retrieve recovered2" from_port="output" to_op="Generate Max Recovered" to_port="example set input"/>
+      <connect from_op="Generate Max Recovered" from_port="example set output" to_port="result 12"/>
+      <connect from_op="Retrieve All (2)" from_port="output" to_op="Select Attributes" to_port="example set input"/>
+      <connect from_op="Select Attributes" from_port="example set output" to_op="Clustering" to_port="example set"/>
+      <connect from_op="Clustering" from_port="cluster model" to_port="result 13"/>
+      <connect from_op="Retrieve dactive" from_port="output" to_op="Set Role" to_port="example set input"/>
+      <connect from_op="Set Role" from_port="example set output" to_op="Naive Active" to_port="training set"/>
+      <connect from_op="Naive Active" from_port="model" to_port="result 1"/>
+      <connect from_op="Retrieve dtotal" from_port="output" to_op="Set Role (3)" to_port="example set input"/>
+      <connect from_op="Set Role (3)" from_port="example set output" to_op="Naive Total" to_port="training set"/>
+      <connect from_op="Naive Total" from_port="model" to_port="result 2"/>
+      <connect from_op="Retrieve ddeath" from_port="output" to_op="Set Role (4)" to_port="example set input"/>
+      <connect from_op="Set Role (4)" from_port="example set output" to_op="NAive Death" to_port="training set"/>
+      <connect from_op="NAive Death" from_port="model" to_port="result 3"/>
+      <connect from_op="Retrieve drec" from_port="output" to_op="Set Role (5)" to_port="example set input"/>
+      <connect from_op="Set Role (5)" from_port="example set output" to_op="Naive Recovered" to_port="training set"/>
+      <connect from_op="Naive Recovered" from_port="model" to_port="result 4"/>
+      <connect from_op="Retrieve dactive (2)" from_port="output" to_op="Set Role (2)" to_port="example set input"/>
+      <connect from_op="Set Role (2)" from_port="example set output" to_op="Active Tree" to_port="training set"/>
+      <connect from_op="Active Tree" from_port="model" to_port="result 14"/>
+      <connect from_op="Retrieve ddeath (2)" from_port="output" to_op="Set Role (6)" to_port="example set input"/>
+      <connect from_op="Set Role (6)" from_port="example set output" to_op="Death tree" to_port="training set"/>
+      <connect from_op="Death tree" from_port="model" to_port="result 15"/>
+      <connect from_op="Retrieve drec (2)" from_port="output" to_op="Set Role (7)" to_port="example set input"/>
+      <connect from_op="Set Role (7)" from_port="example set output" to_op="Recovered Tree" to_port="training set"/>
+      <connect from_op="Recovered Tree" from_port="model" to_port="result 16"/>
+      <connect from_op="Retrieve dtotal (2)" from_port="output" to_op="Set Role (8)" to_port="example set input"/>
+      <connect from_op="Set Role (8)" from_port="example set output" to_op="Total Tree" to_port="training set"/>
+      <connect from_op="Total Tree" from_port="model" to_port="result 17"/>
+      <connect from_op="Retrieve dactive (3)" from_port="output" to_op="Numerical from Active" to_port="example set input"/>
+      <connect from_op="Numerical from Active" from_port="example set output" to_port="result 18"/>
+      <connect from_op="Retrieve ddeath (3)" from_port="output" to_op="Numerical from Death" to_port="example set input"/>
+      <connect from_op="Numerical from Death" from_port="example set output" to_port="result 19"/>
+      <connect from_op="Retrieve drec (3)" from_port="output" to_op="Numerical from Recovered" to_port="example set input"/>
+      <connect from_op="Numerical from Recovered" from_port="example set output" to_port="result 20"/>
+      <connect from_op="Retrieve dtotal (3)" from_port="output" to_op="Numerical from Total" to_port="example set input"/>
+      <connect from_op="Numerical from Total" from_port="example set output" to_port="result 21"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+      <portSpacing port="sink_result 5" spacing="0"/>
+      <portSpacing port="sink_result 6" spacing="0"/>
+      <portSpacing port="sink_result 7" spacing="0"/>
+      <portSpacing port="sink_result 8" spacing="0"/>
+      <portSpacing port="sink_result 9" spacing="0"/>
+      <portSpacing port="sink_result 10" spacing="0"/>
+      <portSpacing port="sink_result 11" spacing="0"/>
+      <portSpacing port="sink_result 12" spacing="0"/>
+      <portSpacing port="sink_result 13" spacing="0"/>
+      <portSpacing port="sink_result 14" spacing="0"/>
+      <portSpacing port="sink_result 15" spacing="0"/>
+      <portSpacing port="sink_result 16" spacing="0"/>
+      <portSpacing port="sink_result 17" spacing="0"/>
+      <portSpacing port="sink_result 18" spacing="0"/>
+      <portSpacing port="sink_result 19" spacing="0"/>
+      <portSpacing port="sink_result 20" spacing="0"/>
+      <portSpacing port="sink_result 21" spacing="0"/>
+      <portSpacing port="sink_result 22" spacing="0"/>
+    </process>
+  </operator>
+</process>

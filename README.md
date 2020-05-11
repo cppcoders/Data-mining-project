@@ -1,13 +1,19 @@
 # Data
 
-Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins university, and it's daily updated
+## So We Gathered Our [data](https://github.com/CSSEGISandData/COVID-19) from Johns Hopkins University Repository on Github, and it's daily updated.
+
+### The Data from JHU Are Seperated Into 3 Files
+
+- Total Confirmed Cases Upto Each Date For Each State and Country
+- Total Recoverd Cases Upto Each Date For Each State and Country
+- Total Death Cases Upto Each Date For Each State and Country
 
 ### Some modifications we made on the data are :
 
-- removing province/state columns
-- grouping states by countries and sum thier values
-- extract last day data from each data set to create summary dataset
-- using datasets to create new datasets for new daily cases
+- Removing province/state columns
+- Grouping states by countries and sum thier values
+- Extract last day data from each data set to create summary dataset
+- Using datasets to create new datasets for new daily cases
 
 ---
 
@@ -15,7 +21,7 @@ Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins uni
 
 # Correlation of Data
 
-- using different correlation methods we calculated the following correlations between data
+- Using different correlation methods like (Standard, Kendall, Spearman) we calculated the following correlations between data
 
 ![Corr](images/correlation.png)
 
@@ -23,7 +29,7 @@ Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins uni
 
 # Similarity and Dissimilarity of Data
 
-- using different distance methods we calculated the following distances between the data
+- using different distance methods like (Eucledian, Manhattan, Supermum ) we calculated the following distances between the data
 
 ![dis](images/distance.png)
 
@@ -31,7 +37,7 @@ Our [data](https://github.com/CSSEGISandData/COVID-19) is from Johns Hopkins uni
 
 # Skewness of Data
 
-## 1- Calculating the skewness of Total Deaths for all the countries with **Rapidminer**
+### 1- Calculating the skewness of Total Deaths for all the countries with **Rapidminer**
 
 by plotting the number of death cases on the x axis and number of countries have the same number of cases on the y axis.
 
@@ -39,7 +45,7 @@ by plotting the number of death cases on the x axis and number of countries have
 We can see that the data is positively skewed, which means that the majority of the countries have few dead cases
 </br></br>
 
-## 2- Calculating Skewness of Total Confirmed, Recovered, Deaths & Active Cases Data using **Python**
+### 2- Calculating Skewness of Total Confirmed, Recovered, Deaths & Active Cases Data using **Python**
 
 ![skew](https://raw.githubusercontent.com/sudofix/COVID19/master/skew.png)
 
@@ -60,7 +66,7 @@ We can see that also (Total cases, Recovered cases, Active cases ) data is posit
 
 # Data Boxplots
 
-- drawing boxplots for confirmed, death, recoverd and active cases gave the follwing charts
+- Drawing boxplots for confirmed, death, recoverd and active cases gave the follwing charts
 
 ![box](images/Boxplots.png)
 
@@ -175,26 +181,95 @@ The number of Actual cases on May 25 is about **150,000 cases**
 
 minimum will be zero for all so no need to generate it
 
+- Distance Between Recovered and Death Cases
+
+![mrc](images2/mrrr.png)
+
 ---
 
 # Discretization
 
 The data has no missing values, instead it's replaced with zeroes so we don't to worry about that.</br>
-We discretize the Active Cases for the countries as follows :
-| Upper limit | class name |
-| ----- | ----- |
-| 0 | none |
-| 2000 | low |
-| 9000 | medium |
-| 1,020,000 (maximum number of Active cases) | high
 
-![fig](https://github.com/cppcoders/Data-mining-project/blob/master/Discretizetion.png)
+## We discretize the Active Cases for the countries as follows :
+
+| Upper limit | class name |
+| ----------- | ---------- |
+| 0           | none       |
+| 1000        | low        |
+| 20000       | medium     |
+| 2000000     | high       |
+
+![fig](images2/diactive.png)
+
+## We discretize the Total Cases for the countries as follows :
+
+| Upper limit | class name |
+| ----------- | ---------- |
+| 0           | none       |
+| 1000        | low        |
+| 20000       | medium     |
+| 2000000     | high       |
+
+![fig](images2/ditotal.png)
+
+## We discretize the Recovered Cases for the countries as follows :
+
+| Upper limit | class name |
+| ----------- | ---------- |
+| 0           | none       |
+| 1000        | low        |
+| 10000       | medium     |
+| 2000000     | high       |
+
+![fig](images2/direc.png)
+
+## We discretize the Death Cases for the countries as follows :
+
+| Upper limit | class name |
+| ----------- | ---------- |
+| 0           | none       |
+| 100         | low        |
+| 1000        | medium     |
+| 2000000     | high       |
+
+![fig](images2/dideath.png)
 
 ---
 
 ---
 
 # Text to Numerical
+
+## We Converted the Total Cases discretization for the countries with Dummy Coding :
+
+![fig](images2/dutotal.png)
+
+## We Converted the Active Cases discretization for the countries as follows :
+
+| Value | Instead of |
+| ----- | ---------- |
+| 3     | none       |
+| 1     | low        |
+| 0     | medium     |
+| 2     | high       |
+
+![fig](images2/texactive.png)
+
+## We Converted the Recovered Cases discretization for the countries with Dummy Coding :
+
+![fig](images2/durec.png)
+
+## We Converted the Death Cases discretization for the countries as follows :
+
+| Value | Instead of |
+| ----- | ---------- |
+| 3     | none       |
+| 1     | low        |
+| 0     | medium     |
+| 2     | high       |
+
+![fig](images2/texdeath.png)
 
 ---
 
@@ -208,8 +283,8 @@ We discretize the Active Cases for the countries as follows :
 
 As we know bluetooth has a maximum range of 10 feet so we can use this as an advantage, we can make every mobile phone keep it's bluetooth on scanning for devices always and logging how long any discovered device is available in the given range, using the data from these logs and by sending it daily to data analysis servers. when someone is tested positive for coronavirus we can know who he has been with in the last 14 days and for how long so we can predict infected people and quarantine them
 
-
 ## Second one based on SIM location
+
 By representing the persons as nodes and tarck there paths using phones SIM cards location data, whenever there is an infected person we can track his/her path for the last 14 days (starting of infection) and give every person (other node) he/she interacted with a propability of being infected based on the time and most importantly the space between them while interacting.
 After that we consider people with high propabilities infected and track there paths too to find suspicious people that may contain the virous.
 
@@ -218,6 +293,28 @@ After that we consider people with high propabilities infected and track there p
 ---
 
 # Decision Tree
+
+We Made 4 Decision Trees, Each one is Based on Different Attribute as a Label
+
+## Active Cases
+
+![fig](images2/treeact.png)
+![fig](images2/treeact1.png)
+
+## Total Cases
+
+![fig](images2/treetotal.png)
+![fig](images2/treetotal1.png)
+
+## Recovered Cases
+
+![fig](images2/treerec.png)
+![fig](images2/treerec1.png)
+
+## Death Cases
+
+![fig](images2/treedeath.png)
+![fig](images2/treedeath1.png)
 
 ---
 
@@ -229,15 +326,57 @@ After that we consider people with high propabilities infected and track there p
 
 - Description
 
-![sd](images/sdbayes.png)
+![sd](images2/1.png)
 
 - Simple Charts
 
-![c](images/cbayes.png)
+![sd](images2/2.png)
 
 - Distribution Table
 
-![d](images/dbayes.png)
+![sd](images2/3.png)
+
+## using total cases discretized data we applid naive bayes classification and this is the results
+
+- Description
+
+![sd](images2/4.png)
+
+- Simple Charts
+
+![sd](images2/5.png)
+
+- Distribution Table
+
+![sd](images2/6.png)
+
+## using death cases discretized data we applid naive bayes classification and this is the results
+
+- Description
+
+![sd](images2/7.png)
+
+- Simple Charts
+
+![sd](images2/8.png)
+
+- Distribution Table
+
+![sd](images2/9.png)
+
+## using recovered cases discretized data we applid naive bayes classification and this is the results
+
+- Description
+
+![sd](images2/10.png)
+
+- Simple Charts
+
+![sd](images2/11.png)
+
+- Distribution Table
+
+![sd](images2/12.png)
 
 ---
 
@@ -251,17 +390,17 @@ After that we consider people with high propabilities infected and track there p
 - Number of cluster is 3
 
 The means for each cluster
-![fig](https://github.com/cppcoders/Data-mining-project/blob/master/cluster3.png)
+![fig](images/cluster3.png)
 
 Number of countries in each cluster
-![fig](https://github.com/cppcoders/Data-mining-project/blob/master/cluster1.png)
+![fig](images/cluster1.png)
 
 Number of countries rows which belongs to cluster 0
-![fig](https://github.com/cppcoders/Data-mining-project/blob/master/cluster2.png)
+![fig](images/cluster2.png)
 
 Plotting the clusters
 
-![fig](https://github.com/cppcoders/Data-mining-project/blob/master/k-means-RM.jpeg)
+![fig](images/k-means-RM.jpeg)
 
 </br>
 </br>
@@ -298,7 +437,7 @@ fviz_cluster(km.res ,df)
 | 2       | 1                   |
 | 3       | 10                  |
 
-![fig](https://github.com/cppcoders/Data-mining-project/blob/master/k-means-US.png)
+![fig](images/k-means-US.png)
 
 But we can clearly see that US is affecting the clustering because it's very high numbers so it's taking a cluster for itself
 
@@ -315,4 +454,4 @@ data = data %>% filter(Country != "US")
 | 2       | 6                   |
 | 3       | 4                   |
 
-![fig](https://github.com/cppcoders/Data-mining-project/blob/master/k-means.png)
+![fig](images/k-means.png)

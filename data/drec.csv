@@ -1,0 +1,188 @@
+Country,Total Cases,Total Deaths,Active Cases,Total Recovered
+Afghanistan,4033,115,3416,Low
+Albania,856,31,198,Low
+Algeria,5558,494,2518,Medium
+Andorra,754,48,161,Low
+Angola,43,2,28,Low
+Antigua and Barbuda,25,3,3,Low
+Argentina,5776,300,3748,Medium
+Armenia,3175,44,1864,Medium
+Australia,6939,97,701,Medium
+Austria,15833,615,1290,High
+Azerbaijan,2422,31,771,Medium
+Bahamas,92,11,44,Low
+Bahrain,4774,8,2711,Medium
+Bangladesh,13770,214,11142,Medium
+Barbados,84,7,20,Low
+Belarus,22052,126,15876,Medium
+Belgium,52596,8581,30604,High
+Belize,18,2,0,Low
+Benin,284,2,220,Low
+Bhutan,7,0,2,Low
+Bolivia,2437,114,2065,Low
+Bosnia and Herzegovina,2090,102,929,Medium
+Botswana,23,1,10,Low
+Brazil,156061,10656,83720,High
+Brunei,141,1,8,Low
+Bulgaria,1921,90,1409,Low
+Burkina Faso,748,48,131,Low
+Burma,178,6,104,Low
+Burundi,15,1,7,Low
+Cabo Verde,236,2,178,Low
+Cambodia,122,0,2,Low
+Cameroon,2274,108,934,Medium
+Canada,68918,4823,32833,High
+Central African Republic,143,0,133,Low
+Chad,322,31,238,Low
+Chile,27219,304,14248,High
+China,83990,4637,226,High
+Colombia,10495,445,7481,Medium
+Comoros,11,1,10,None
+Congo (Brazzaville),274,10,231,Low
+Congo (Kinshasa),937,39,768,Low
+Costa Rica,780,6,294,Low
+Cote d'Ivoire,1667,21,877,Low
+Croatia,2176,87,363,Medium
+Cuba,1754,74,540,Medium
+Cyprus,892,15,476,Low
+Czechia,8095,276,3372,Medium
+Denmark,10517,526,1700,Medium
+Diamond Princess,712,13,54,Low
+Djibouti,1189,3,352,Low
+Dominica,16,0,2,Low
+Dominican Republic,9882,385,6913,Medium
+Ecuador,29071,1717,23921,Medium
+Egypt,8964,514,6448,Medium
+El Salvador,784,17,491,Low
+Equatorial Guinea,439,4,422,Low
+Eritrea,39,0,2,Low
+Estonia,1733,60,926,Low
+Eswatini,163,2,147,Low
+Ethiopia,210,5,108,Low
+Fiji,18,0,4,Low
+Finland,5880,265,1615,Medium
+France,176782,26313,94321,High
+Gabon,661,8,543,Low
+Gambia,20,1,10,Low
+Georgia,626,10,319,Low
+Germany,171324,7549,20475,High
+Ghana,4263,22,3863,Low
+Greece,2710,151,1185,Medium
+Grenada,21,0,8,Low
+Guatemala,967,24,839,Low
+Guinea,2042,11,1333,Low
+Guinea-Bissau,641,3,613,Low
+Guyana,94,10,49,Low
+Haiti,151,12,122,Low
+Holy See,12,0,10,Low
+Honduras,1830,108,1527,Low
+Hungary,3213,405,1904,Low
+Iceland,1801,10,18,Medium
+India,62808,2101,41406,High
+Indonesia,13645,959,10079,Medium
+Iran,106220,6589,14567,High
+Iraq,2679,107,870,Medium
+Ireland,22760,1446,4204,High
+Israel,16454,247,4831,High
+Italy,218268,30395,84842,High
+Jamaica,490,9,419,Low
+Japan,15663,607,9150,Medium
+Jordan,522,9,126,Low
+Kazakhstan,4975,31,3168,Medium
+Kenya,649,30,412,Low
+"Korea, South",10874,256,1008,Medium
+Kosovo,862,28,212,Low
+Kuwait,7623,49,4952,Medium
+Kyrgyzstan,931,12,261,Low
+Laos,19,0,6,Low
+Latvia,930,18,448,Low
+Lebanon,809,26,549,Low
+Liberia,199,20,100,Low
+Libya,64,3,37,Low
+Liechtenstein,82,1,26,Low
+Lithuania,1444,49,567,Low
+Luxembourg,3877,101,226,Medium
+MS Zaandam,9,2,7,None
+Madagascar,193,0,92,Low
+Malawi,56,3,39,Low
+Malaysia,6589,108,1552,Medium
+Maldives,790,3,758,Low
+Mali,692,37,357,Low
+Malta,490,5,58,Low
+Mauritania,8,1,1,Low
+Mauritius,332,10,2,Low
+Mexico,33460,3353,8283,High
+Moldova,4867,161,2781,Medium
+Monaco,96,4,10,Low
+Mongolia,42,0,28,Low
+Montenegro,324,8,42,Low
+Morocco,5910,186,3263,Medium
+Mozambique,87,0,53,Low
+Namibia,16,0,6,Low
+Nepal,110,0,79,Low
+Netherlands,42581,5441,36991,Low
+New Zealand,1494,21,102,Medium
+Nicaragua,16,5,4,Low
+Niger,815,45,153,Low
+Nigeria,4151,128,3278,Low
+North Macedonia,1622,91,419,Medium
+Norway,8099,219,7848,Low
+Oman,3224,17,2139,Medium
+Pakistan,28736,636,20291,Medium
+Panama,8282,237,3544,Medium
+Papua New Guinea,8,0,0,Low
+Paraguay,689,10,524,Low
+Peru,65015,1814,42955,High
+Philippines,10610,704,8064,Medium
+Poland,15651,785,9429,Medium
+Portugal,27406,1126,23781,Medium
+Qatar,21331,13,18869,Medium
+Romania,15131,939,7280,Medium
+Russia,198676,1827,164933,High
+Rwanda,280,0,140,Low
+Saint Kitts and Nevis,15,0,1,Low
+Saint Lucia,18,0,1,Low
+Saint Vincent and the Grenadines,17,0,8,Low
+San Marino,637,41,470,Low
+Sao Tome and Principe,208,5,199,Low
+Saudi Arabia,37136,239,26753,High
+Senegal,1634,17,974,Low
+Serbia,10032,215,7085,Medium
+Seychelles,11,0,3,Low
+Sierra Leone,291,18,215,Low
+Singapore,22460,20,20144,Medium
+Slovakia,1455,26,510,Low
+Slovenia,1454,101,1098,Low
+Somalia,997,48,839,Low
+South Africa,9420,186,5251,Medium
+South Sudan,120,0,118,Low
+Spain,223578,26478,63148,High
+Sri Lanka,847,9,578,Low
+Sudan,1164,64,981,Low
+Suriname,10,1,0,Low
+Sweden,25921,3220,17730,Medium
+Switzerland,30251,1830,2021,High
+Syria,47,3,15,Low
+Taiwan*,440,6,73,Low
+Tajikistan,612,20,592,None
+Tanzania,509,21,305,Low
+Thailand,3004,56,161,Medium
+Timor-Leste,24,0,3,Low
+Togo,153,10,56,Low
+Trinidad and Tobago,116,8,4,Low
+Tunisia,1032,45,327,Low
+Turkey,137115,3739,43896,High
+US,1309550,78795,1018221,High
+Uganda,116,0,61,Low
+Ukraine,14710,376,11425,Medium
+United Arab Emirates,17417,185,12937,Medium
+United Kingdom,216525,31662,183862,Medium
+Uruguay,702,18,171,Low
+Uzbekistan,2349,10,493,Medium
+Venezuela,402,10,202,Low
+Vietnam,288,0,47,Low
+West Bank and Gaza,375,2,145,Low
+Western Sahara,6,0,1,Low
+Yemen,34,7,26,Low
+Zambia,252,7,133,Low
+Zimbabwe,35,4,22,Low
