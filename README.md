@@ -163,7 +163,7 @@ The number of Actual cases on May 25 is about **150,000 cases**
 
 # Attributes Generation
 
-- Active Cases Generation
+- Active Cases Generation & Distance Between Recovered and Death Cases
 
 ![act](images/act.png)
 
@@ -180,10 +180,6 @@ The number of Actual cases on May 25 is about **150,000 cases**
 ![mrc](images/mrc.png)
 
 minimum will be zero for all so no need to generate it
-
-- Distance Between Recovered and Death Cases
-
-![mrc](images2/mrrr.png)
 
 ---
 
