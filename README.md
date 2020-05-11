@@ -282,7 +282,7 @@ As we know bluetooth has a maximum range of 10 feet so we can use this as an adv
 ## Second one based on SIM location
 
 By representing the persons as nodes and tarck there paths using phones SIM cards location data, whenever there is an infected person we can track his/her path for the last 14 days (starting of infection) and give every person (other node) he/she interacted with a propability of being infected based on the time and most importantly the space between them while interacting.
-After that we consider people with high propabilities infected and track there paths too to find suspicious people that may contain the virous.
+After that we consider people with high propabilities infected and track there paths too to find suspicious people that may contain the virus.
 
 ---
 
