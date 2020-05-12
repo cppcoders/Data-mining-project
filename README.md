@@ -1,3 +1,24 @@
+# Introduction 
+This project aims to analys COVID-19 data to understand the disease more and find any interesting patterns.</br>
+It's divided to two phases</br>
+**Phase 1 :**
+- Correlation
+- Similarity 
+- Skewness 
+- Progress of Infection 
+- Boxplots of data </br>
+ 
+**Phase 2 :**
+- Prediction 
+-  Attributes Generation 
+- Discretization 
+- Text to Numerical 
+- Tracking Idea 
+- Decision Tree 
+-  Naive Bayes Classification 
+- K-Means Clustering 
+
+
 # Data
 
 ## So We Gathered Our [data](https://github.com/CSSEGISandData/COVID-19) from Johns Hopkins University Repository on Github, and it's daily updated.
@@ -316,7 +337,7 @@ We Made 4 Decision Trees, Each one is Based on Different Attribute as a Label
 
 ---
 
-# Naive Bayes Classification
+# Naive Bayes Classification 
 
 ## using active cases discretized data we applid naive bayes classification and this is the results
 
